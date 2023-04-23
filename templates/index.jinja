@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+
+<body>
+    {% extends "base.jinja" %}
+
+    {% block content %}
+
+    <h1>Worlds Best Library</h1>
+    <h2> Current Books</h2>
+
+    {# <div class="Books"> #}
+    
+        <form class="form-inline" action="/books" method="POST">
+            <label for="title">book title</label>
+            <input type="text" name=" title" id="title">
+
+            <label for="Author"> Author </label>
+            <input type="Author" name="Author" id="Author">
+
+            <label for="Genre"> Genre</label>
+            <textarea name="description" rows="2" cols="30"></textarea>
+            <input type="Submit" value="Add book">
+
+        </form>
+        {# <li><b>{{book.title}}</b> #}
+            {# <a href="/books/{{books.index(book)}}"><br><b>{{book.title}}</b></a> #}
+
+            {% for book in books%}
+            <h2><a href="/books/{{books.index(book)}}"><br><b>{{book.title}}</b></a></h2>
+            {# <h3>{{ book.author }}</h3>
+            <h4>{{ book.genre }}</h4> #}
+
+            <form class="form-inline" action="/books/delete/{{book.title}}" method="post">
+                <input type="submit" value="Delete">
+                {% endfor %}
+                {% endblock %}
+    </div>
+    </form>
+
+
+</body>
+
+</html>
+</head>
+
+{# <form class="form-inline" action="/events/delete/{{ event.name }}" method="POST">
+    <input type="submit" value="Delete"> #}
