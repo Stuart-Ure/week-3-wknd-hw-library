@@ -18,12 +18,11 @@ def show_book(index):
 
 @app.route('/books', methods = ['POST'])
 def add_book():
-    title = request.form [ 'Title' ]
-    author = request.form [ 'Author' ]
-    genre = request.form [ 'Genre' ]
-    new_book= Book(title= title, author = author, genre = genre)
+    title = request.form ['title']
+    author = request.form ['author']
+    genre = request.form ['genre']
+    new_book= Book(title= title, author = author, genre = genre,)
     add_new_book(new_book)
-    # books = show_books ()
     return redirect ("/books") 
     
 
